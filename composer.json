@@ -1,0 +1,43 @@
+{
+  "name": "diffhead/laravel-data-enrichment",
+  "description": "Data enrichment library based on DataEnrichmentKit. A suitable components for micro services written using laravel framework.",
+  "type": "library",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "laravel", "data enrichment", "facade", "psr7", "http",
+    "pipeline", "message processing", "middleware", "microservice"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Diffhead\\PHP\\LaravelDataEnrichment\\": "src/",
+      "Diffhead\\PHP\\LaravelDataEnrichment\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Diffhead\\PHP\\LaravelDataEnrichment\\ServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "laravel/framework": "^10 || ^11.0 || ^12.0",
+    "diffhead/php-data-enrichment-kit": "^1.0.0",
+    "symfony/psr-http-message-bridge": "^7.3"
+  },
+  "scripts": {
+    "test": "phpunit",
+    "post-install-cmd": [
+      "php artisan vendor:publish --provider=\"Diffhead\\PHP\\LaravelDataEnrichment\\ServiceProvider\""
+    ]
+  },
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Viktor S.",
+      "email": "thinlineseverywhere@gmail.com"
+    }
+  ]
+}
