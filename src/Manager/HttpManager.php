@@ -37,9 +37,13 @@ class HttpManager extends AbstractManager
     public function enrichMessage(MessageInterface $message): MessageInterface
     {
         $requests = $this->message->getRequests($message, $this->requestsHeader);
-        $payload = $this->message->getPayload($message);
-        $enriched = $this->enricher->enrich($payload, $requests);
 
-        return $this->message->setPayload($message, $enriched);
+        if ($requests->count()) {
+            $payload = $this->message->getPayload($message);
+            $enriched = $this->enricher->enrich($payload, $requests);
+            $message = $this->message->setPayload($message, $enriched);
+        }
+
+        return $message;
     }
 }

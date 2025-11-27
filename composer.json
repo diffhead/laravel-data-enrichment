@@ -3,15 +3,15 @@
   "description": "Data enrichment library based on DataEnrichmentKit. A suitable components for micro services written using laravel framework.",
   "type": "library",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "laravel", "data enrichment", "facade", "psr7", "http",
-    "pipeline", "message processing", "middleware", "microservice"
+    "pipeline", "message processing", "middleware", "microservice",
+    "data processing", "data transformation"
   ],
   "autoload": {
     "psr-4": {
-      "Diffhead\\PHP\\LaravelDataEnrichment\\": "src/",
-      "Diffhead\\PHP\\LaravelDataEnrichment\\Tests\\": "tests/"
+      "Diffhead\\PHP\\LaravelDataEnrichment\\": "src/"
     }
   },
   "extra": {
